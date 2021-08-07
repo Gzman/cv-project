@@ -1,33 +1,20 @@
-import React, { Component } from "react";
+import { Component } from "react";
+import { Education } from "./Education"
 
-class CvForm extends Component {
+class CVForm extends Component {
     constructor(props) {
         super(props);
     }
 
-    render() {
-        const { category, categoryId, categoryName, handleInput } = this.props;
+    render() { // Should return a <form> element
         return (
-            <form id={`${categoryName}-form`}>
-                {
-                    Object
-                        .keys(category)
-                        .filter(property => property !== "id")
-                        .map((property) => {
-                            return <input
-                                key={`${categoryId}${property}`}
-                                type="text"
-                                name={property}
-                                placeholder={property}
-                                value={category[property]}
-                                onChange={(e) => handleInput(categoryId, e.target.name, e.target.value)}
-                            />
-                        })
-                }
-            </form>
+            <div id="cv-form" >
+                <h2>Personal Information</h2>
+                <h2>Experience</h2>
+                <Education />
+            </div>
         )
     }
-
 }
 
-export { CvForm }
+export { CVForm }

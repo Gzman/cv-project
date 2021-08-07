@@ -8,7 +8,7 @@ const PersonalInfoMeta = {
     EMAIL: "Email",
 }
 
-const PersonalInfo = (firstname = "", lastname = "", title = "", city = "", phoneNumber = "", email = "") => {
+const PersonalInfoModel = (firstname = "", lastname = "", title = "", city = "", phoneNumber = "", email = "") => {
     const { FIRSTNAME, LASTNAME, TITLE, CITY, PHONE, EMAIL } = PersonalInfoMeta;
     return {
         [FIRSTNAME]: firstname,
@@ -20,4 +20,4 @@ const PersonalInfo = (firstname = "", lastname = "", title = "", city = "", phon
     }
 }
 
-export { PersonalInfoMeta, PersonalInfo }
+export { PersonalInfoMeta, PersonalInfoModel }

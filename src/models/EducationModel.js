@@ -1,12 +1,12 @@
 
 const EducationMeta = {
     FROM: "From (YYYY)",
-    TO: "TO (YYYY)",
+    TO: "To (YYYY)",
     SCHOOL: "School",
     DEGREE: "Degree",
 }
 
-const Education = (from = "", to = "", school = "", degree = "") => {
+const EducationModel = (from = "", to = "", school = "", degree = "") => {
     const { FROM, TO, SCHOOL, DEGREE } = EducationMeta;
     return {
         [FROM]: from,
@@ -16,4 +16,4 @@ const Education = (from = "", to = "", school = "", degree = "") => {
     }
 }
 
-export { EducationMeta, Education }
+export { EducationMeta, EducationModel }

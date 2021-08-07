@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { EducationItem } from "./components/EducationItem";
+import { CVForm } from "../src/components/CVForm"
 
 class App extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <EducationItem />
+        <CVForm />
       </div>
     )
   }

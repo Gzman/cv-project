@@ -1,13 +1,13 @@
 
 const ExperienceMeta = {
     FROM: "From (YYYY)",
-    TO: "TO (YYYY)",
+    TO: "To (YYYY)",
     COMPANY: "Company",
     POSITION: "Position",
     DESCRIPTION: "Description",
 }
 
-const Experience = (from = "", to = "", company = "", position = "", description = "") => {
+const ExperienceModel = (from = "", to = "", company = "", position = "", description = "") => {
     const { FROM, TO, COMPANY, POSITION, DESCRIPTION } = ExperienceMeta;
     return {
         [FROM]: from,
@@ -18,4 +18,4 @@ const Experience = (from = "", to = "", company = "", position = "", description
     }
 }
 
-export { ExperienceMeta, Experience }
+export { ExperienceMeta, ExperienceModel }
