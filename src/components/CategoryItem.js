@@ -18,7 +18,7 @@ function CategoryItem({ category, categoryId, categoryName, editItem, removeItem
                         />
                     })
             }
-            <button onClick={removeItem}>Delete</button>
+            {<button onClick={removeItem}>Delete</button>}
         </div>
     )
 }

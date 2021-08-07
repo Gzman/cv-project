@@ -6,13 +6,15 @@ class CVForm extends Component {
         super(props);
     }
 
-    render() { // Should return a <form> element
+    render() {
+        const { educations, addEducation, editEducations, removeEducation } = this.props;
         return (
-            <div id="cv-form" >
+            <form id="cv-form" onSubmit={(e) => e.preventDefault()}>
                 <h2>Personal Information</h2>
                 <h2>Experience</h2>
-                <Education />
-            </div>
+                <Education data={educations} add={addEducation} edit={editEducations} remove={removeEducation} />
+                <button onClick={() => console.log("Clear all inputs")}>Reset</button>
+            </form>
         )
     }
 }
