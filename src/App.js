@@ -8,29 +8,26 @@ const { PERSONAL_INFO, EXPERIENCE, EDUCATION } = CategoriesMeta;
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      [PERSONAL_INFO]: [
-        {
-          id: uniqid(),
-          ...Categories[PERSONAL_INFO].model(),
-        },
-      ],
-      [EXPERIENCE]: [
-        {
-          id: uniqid(),
-          ...Categories[EXPERIENCE].model(),
-        },
-      ],
-      [EDUCATION]: [
-        {
-          id: uniqid(),
-          ...Categories[EDUCATION].model(),
-        },
-      ],
-    }
+    this.state = this.initState();
+    this.initState = this.initState.bind(this);
     this.addCategoryItem = this.addCategoryItem.bind(this);
     this.removeCategoryItem = this.removeCategoryItem.bind(this);
     this.editCategoryItem = this.editCategoryItem.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+
+  initState() {
+    const initialState = Object
+      .values(CategoriesMeta)
+      .map((category) => [
+        [category], [
+          {
+            id: uniqid(),
+            ...Categories[category].model(),
+          }
+        ]
+      ]);
+    return Object.fromEntries(initialState);
   }
 
   addCategoryItem(categoryName) {
@@ -60,6 +57,10 @@ class App extends Component {
     });
   }
 
+  reset() {
+    this.setState(this.initState());
+  }
+
   render() {
     return (
       <div className="App" >
@@ -76,6 +77,8 @@ class App extends Component {
           addEducation={() => this.addCategoryItem(EDUCATION)}
           editEducations={(id, property, value) => this.editCategoryItem(EDUCATION, id, property, value)}
           removeEducation={(id) => this.removeCategoryItem(EDUCATION, id)}
+
+          reset={this.reset}
         />
       </div>
     )
