@@ -1,14 +1,19 @@
 
-function PersonalInfo({ categoryName, firstname, lastname, title, phoneNumber, email }) {
+function PersonalInfo({ categoryName, firstname, lastname, title, city, phoneNumber, email }) {
     return (
-        <div className={categoryName}>
-            <div>
-                <h2>{title}</h2>
-                <h2>{firstname}</h2>
-                <h2>{lastname}</h2>
+        <div className={`${categoryName}-content`}>
+            <div className={`${categoryName}-fullname`}>
+                <h2 className={`${categoryName}-title`}>{title}</h2>
+                <div className={`${categoryName}-fullname`}>
+                    <h2 className={`${categoryName}-firstname`}>{firstname}</h2>
+                    <h2 className={`${categoryName}-lastname`}>{lastname}</h2>
+                </div>
             </div>
-            <p>{phoneNumber}</p>
-            <p>{email}</p>
+            <div className={`${categoryName}-contact`}>
+                <p className={`${categoryName}-city`}>{city}</p>
+                <p className={`${categoryName}-phone`}>{phoneNumber}</p>
+                <p className={`${categoryName}-email`}>{email}</p>
+            </div>
         </div>
     )
 }

@@ -2,14 +2,14 @@ import React from "react"
 
 function Education({ categoryName, from, to, school, degree }) {
     return (
-        <div className={categoryName}>
-            <div>
-                <p>{from}</p>
-                <p>{to}</p>
+        <div className={`${categoryName}-content`}>
+            <div className={`${categoryName}-period`}>
+                <p className={`${categoryName}-from`}>{from}</p>
+                <p className={`${categoryName}-to`}>{to}</p>
             </div>
-            <div>
-                <p>{degree}</p>
-                <p>{school}</p>
+            <div className={`${categoryName}-info`}>
+                <p className={`${categoryName}-degree`}>{degree}</p>
+                <p className={`${categoryName}-school`}>{school}</p>
             </div>
         </div>
     )
