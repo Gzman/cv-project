@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { CategoriesMeta, Categories } from "./models/Categories"
 import { CVForm } from "../src/components/CVForm"
+import { CVOutput } from "../src/components/CVOutput"
 import uniqid from "uniqid"
 
 const { PERSONAL_INFO, EXPERIENCE, EDUCATION } = CategoriesMeta;
@@ -80,6 +81,7 @@ class App extends Component {
 
           reset={this.reset}
         />
+        <CVOutput personalInfo={this.state[PERSONAL_INFO]} education={this.state[EDUCATION]} experience={this.state[EXPERIENCE]} />
       </div>
     )
   }
