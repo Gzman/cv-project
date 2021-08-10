@@ -1,0 +1,22 @@
+
+.personalinfo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.personalinfo-header {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 0.1rem solid black;
+}
+
+.personalinfo-fullname {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.personalinfo-contact {
+    display: flex;
+    flex-direction: column;
+}

@@ -5,7 +5,7 @@ class CategoryItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            errors: [],
+            errors: new Set(),
         }
         this.validate = this.validate.bind(this);
     }
@@ -14,8 +14,8 @@ class CategoryItem extends Component {
         const v = validator[property];
         if (v) {
             const error = v(input);
-            this.setState((state) => ({
-                errors: (error === null) ? [] : [...state.errors, `${property} : ${error}`],
+            this.setState(({ errors }) => ({ // todo: remove error instead of new Set()
+                errors: (error === null) ? new Set() : new Set(errors).add(`${property} : ${error}`),
             }));
         }
     }
@@ -26,7 +26,7 @@ class CategoryItem extends Component {
         return (
             <div id={`${categoryName}-item`}>
                 <div className="feedback">
-                    {errors.map((error, index) => <p key={index}>{error}</p>)}
+                    {[errors].map((error, index) => <p key={index}>{error}</p>)}
                 </div>
                 {
                     Object
@@ -44,7 +44,7 @@ class CategoryItem extends Component {
                             />
                         })
                 }
-                {<button onClick={removeItem}>Delete</button>}
+                {removeItem && <button onClick={removeItem}>Delete</button>}
             </div >
         )
     }

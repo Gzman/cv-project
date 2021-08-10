@@ -1,8 +1,9 @@
+import "../../style/PersonalInformation.css"
 
 function PersonalInfo({ categoryName, firstname, lastname, title, city, phoneNumber, email }) {
     return (
         <div className={`${categoryName}-content`}>
-            <div className={`${categoryName}-fullname`}>
+            <div className={`${categoryName}-header`}>
                 <h2 className={`${categoryName}-title`}>{title}</h2>
                 <div className={`${categoryName}-fullname`}>
                     <h2 className={`${categoryName}-firstname`}>{firstname}</h2>

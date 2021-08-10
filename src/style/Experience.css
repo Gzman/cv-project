@@ -1,0 +1,25 @@
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.experience-header {
+    display: flex;
+    gap: 1rem;
+}
+
+.experience-period {
+    display: flex;
+    gap: 0.5rem
+}
+
+.experience-position {
+    font-weight: 600;
+}
+
+.experience-description {
+    color: rgb(77,77,77);
+}
+
