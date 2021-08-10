@@ -1,20 +1,20 @@
-
 .education-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .education-header {
-    display: flex;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 18% 1fr;
 }
 
-.education-degree, .education-period {
-    font-weight: 600;
+.education-degree,
+.education-period {
+  font-weight: 600;
 }
 
 .education-info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }

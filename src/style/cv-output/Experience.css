@@ -1,25 +1,24 @@
-
 .experience-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .experience-header {
-    display: flex;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 18% 1fr;
 }
 
 .experience-period {
-    display: flex;
-    gap: 0.5rem
+  display: flex;
+  gap: 0.5rem;
 }
 
-.experience-position, .experience-period {
-    font-weight: 600;
+.experience-position,
+.experience-period {
+  font-weight: 600;
 }
 
 .experience-description {
-    color: rgb(77,77,77);
+  color: rgb(77, 77, 77);
 }
-

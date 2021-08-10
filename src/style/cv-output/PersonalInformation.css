@@ -1,22 +1,25 @@
-
 .personalinfo-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .personalinfo-header {
-    display: flex;
-    gap: 0.5rem;
-    border-bottom: 0.1rem solid black;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 0.1rem solid black;
 }
 
 .personalinfo-fullname {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .personalinfo-contact {
-    display: flex;
-    flex-direction: column;
+  display: grid;
+  grid-template-columns: 18% 1fr;
+}
+
+.personalinfo-label {
+  font-weight: 600;
 }

@@ -11,9 +11,9 @@ function PersonalInfo({ categoryName, firstname, lastname, title, city, phoneNum
                 </div>
             </div>
             <div className={`${categoryName}-contact`}>
-                <p className={`${categoryName}-city`}>{city}</p>
-                <p className={`${categoryName}-phone`}>{phoneNumber}</p>
-                <p className={`${categoryName}-email`}>{email}</p>
+                <p className={`${categoryName}-label`}>Adress</p><p className={`${categoryName}-city`}>{city}</p>
+                <p className={`${categoryName}-label`}>Phone Number</p><p className={`${categoryName}-phone`}>{phoneNumber}</p>
+                <p className={`${categoryName}-label`}>Email</p><p className={`${categoryName}-email`}>{email}</p>
             </div>
         </div>
     )
