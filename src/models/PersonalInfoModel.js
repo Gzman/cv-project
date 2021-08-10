@@ -3,7 +3,7 @@ const PersonalInfoMeta = {
     FIRSTNAME: "Firstname",
     LASTNAME: "Lastname",
     TITLE: "Title",
-    CITY: "City",
+    CITY: "Adress",
     PHONE: "Phonenumber",
     EMAIL: "Email",
 }

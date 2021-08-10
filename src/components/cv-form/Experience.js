@@ -1,13 +1,14 @@
 import React from "react"
-import { CategoriesMeta, Categories } from "../models/Categories"
+import { CategoriesMeta, Categories } from "../../models/Categories"
 import { CategoryItem } from "./CategoryItem";
+import "../../style/cv-form/Category.css"
 
 function Experience({ data, add, edit, remove }) {
     const { title } = Categories[CategoriesMeta.EXPERIENCE];
     return (
-        <div className={title}>
-            <h2 className={`${CategoriesMeta.EXPERIENCE}-title`}>{title}</h2>
-            <div className={`${CategoriesMeta.EXPERIENCE}-items`} >
+        <div className="cv-form-category">
+            <h2 className="cv-form-category-title">{title}</h2>
+            <div className="cv-form-category-items" >
                 {data.map((exp) =>
                     <CategoryItem
                         key={exp.id}
@@ -19,7 +20,7 @@ function Experience({ data, add, edit, remove }) {
                     />
                 )}
             </div>
-            <button className={`${CategoriesMeta.EXPERIENCE}-add-btn`} onClick={add}>Add</button>
+            <button className="cv-form-category-add" onClick={add}>New Entry</button>
         </div>
     )
 }

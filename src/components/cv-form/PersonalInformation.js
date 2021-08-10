@@ -1,14 +1,15 @@
 import React from "react"
-import { CategoriesMeta, Categories } from "../models/Categories"
+import { CategoriesMeta, Categories } from "../../models/Categories"
 import { CategoryItem } from "./CategoryItem"
+import "../../style/cv-form/Category.css"
 
 function PersonalInfo({ data, edit }) {
     const { title } = Categories[CategoriesMeta.PERSONAL_INFO];
 
     return (
-        <div className={`${title}`}>
-            <h2 className={`${CategoriesMeta.PERSONAL_INFO}-title`}>{title}</h2>
-            <div className={`${CategoriesMeta.PERSONAL_INFO}-items`}>
+        <div className="cv-form-category">
+            <h2 className="cv-form-category-title">{title}</h2>
+            <div className="cv-form-category-items">
                 {
                     data.map((pers) =>
                         <CategoryItem

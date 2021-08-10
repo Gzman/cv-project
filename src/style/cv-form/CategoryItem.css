@@ -1,0 +1,18 @@
+.category-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feedback {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  color: darkred;
+  background-color: rgb(243, 148, 148);
+  border: 0.1rem solid darkred;
+}
+
+input {
+  padding: 0.5rem;
+}

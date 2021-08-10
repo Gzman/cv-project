@@ -1,5 +1,5 @@
 import React from "react"
-import "../../style/Education.css"
+import "../../style/cv-output/Education.css"
 
 function Education({ categoryName, from, to, school, degree }) {
     return (

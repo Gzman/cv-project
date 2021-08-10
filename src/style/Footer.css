@@ -1,0 +1,13 @@
+.cv-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cv-footer:hover {
+  cursor: pointer;
+}

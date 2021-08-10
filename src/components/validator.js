@@ -13,7 +13,7 @@ const isValidPhoneNumber = (phone) => {
 }
 
 const isValidYear = (year) => {
-    return new RegExp("[0-9]{4}").test(year) ? null : "Invalid year (YYYY)"
+    return new RegExp("[0-9]{4}").test(year) ? null : "Invalid year"
 }
 
 const validator = {

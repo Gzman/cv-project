@@ -1,12 +1,12 @@
 import { Component } from "react";
-import { PersonalInfo } from "./cv-output/PersonalInfo"
-import { PersonalInfoMeta } from "../models/PersonalInfoModel"
-import { Experience } from "./cv-output/Experience";
-import { ExperienceMeta } from "../models/ExperienceModel";
-import { EducationMeta } from "../models/EducationModel";
-import { Education } from "./cv-output/Education";
-import { CategoriesMeta } from "../models/Categories";
-import "../style/CVOutput.css"
+import { PersonalInfo } from "./PersonalInfo";
+import { PersonalInfoMeta } from "../../models/PersonalInfoModel";
+import { Experience } from "./Experience";
+import { ExperienceMeta } from "../../models/ExperienceModel";
+import { EducationMeta } from "../../models/EducationModel";
+import { CategoriesMeta } from "../../models/Categories";
+import { Education } from "./Education";
+import "../../style/cv-output/CVOutput.css";
 
 class CVOutput extends Component {
     render() {

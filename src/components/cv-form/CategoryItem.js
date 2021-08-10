@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { validator } from "./validator"
+import React, { Component } from "react"
+import { validator } from "../validator"
+import "../../style/cv-form/CategoryItem.css"
 
 class CategoryItem extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class CategoryItem extends Component {
         const v = validator[property];
         if (v) {
             const error = v(input);
-            this.setState(({ errors }) => ({ // todo: remove error instead of new Set()
+            this.setState(({ errors }) => ({
                 errors: (error === null) ? new Set() : new Set(errors).add(`${property} : ${error}`),
             }));
         }
@@ -24,10 +25,11 @@ class CategoryItem extends Component {
         const { category, categoryId, categoryName, editItem, removeItem } = this.props;
         const { errors } = this.state;
         return (
-            <div id={`${categoryName}-item`}>
-                <div className="feedback">
-                    {[errors].map((error, index) => <p key={index}>{error}</p>)}
-                </div>
+            <div id={`${categoryName}-item`} className="category-item">
+                {
+                    (errors.size > 0) &&
+                    <div className="feedback">{[errors].map((error, index) => <p key={index}>{error}</p>)}</div>
+                }
                 {
                     Object
                         .keys(category)

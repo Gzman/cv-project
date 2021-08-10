@@ -10,7 +10,7 @@
     gap: 1rem;
 }
 
-.education-degree {
+.education-degree, .education-period {
     font-weight: 600;
 }
 

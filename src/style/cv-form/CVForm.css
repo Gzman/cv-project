@@ -1,0 +1,19 @@
+.cv-form {
+  padding: 2rem;
+}
+
+.cv-form-categories {
+  width: 21cm;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#personalinfo-item,
+#experience-item,
+#education-item {
+    width: 21cm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}

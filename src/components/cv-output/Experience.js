@@ -1,5 +1,5 @@
 import React from "react"
-import "../../style/Experience.css"
+import "../../style/cv-output/Experience.css"
 
 function Experience({ categoryName, from, to, company, position, description }) {
     return (

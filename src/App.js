@@ -1,8 +1,11 @@
 import { Component } from "react";
-import { CategoriesMeta, Categories } from "./models/Categories"
-import { CVForm } from "../src/components/CVForm"
-import { CVOutput } from "../src/components/CVOutput"
-import uniqid from "uniqid"
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { CategoriesMeta, Categories } from "./models/Categories";
+import { CVForm } from "../src/components/cv-form/CVForm";
+import { CVOutput } from "../src/components/cv-output/CVOutput";
+import uniqid from "uniqid";
+import "./style/index.css"
 
 const { PERSONAL_INFO, EXPERIENCE, EDUCATION } = CategoriesMeta;
 
@@ -65,23 +68,27 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <CVForm
-          personalInfo={this.state[PERSONAL_INFO]}
-          editPersonalInfo={(id, property, value) => this.editCategoryItem(PERSONAL_INFO, id, property, value)}
+        <Header />
+        <main>
+          <CVForm
+            personalInfo={this.state[PERSONAL_INFO]}
+            editPersonalInfo={(id, property, value) => this.editCategoryItem(PERSONAL_INFO, id, property, value)}
 
-          experiences={this.state[EXPERIENCE]}
-          addExperience={() => this.addCategoryItem(EXPERIENCE)}
-          editExperiences={(id, property, value) => this.editCategoryItem(EXPERIENCE, id, property, value)}
-          removeExperience={(id) => this.removeCategoryItem(EXPERIENCE, id)}
+            experiences={this.state[EXPERIENCE]}
+            addExperience={() => this.addCategoryItem(EXPERIENCE)}
+            editExperiences={(id, property, value) => this.editCategoryItem(EXPERIENCE, id, property, value)}
+            removeExperience={(id) => this.removeCategoryItem(EXPERIENCE, id)}
 
-          educations={this.state[EDUCATION]}
-          addEducation={() => this.addCategoryItem(EDUCATION)}
-          editEducations={(id, property, value) => this.editCategoryItem(EDUCATION, id, property, value)}
-          removeEducation={(id) => this.removeCategoryItem(EDUCATION, id)}
+            educations={this.state[EDUCATION]}
+            addEducation={() => this.addCategoryItem(EDUCATION)}
+            editEducations={(id, property, value) => this.editCategoryItem(EDUCATION, id, property, value)}
+            removeEducation={(id) => this.removeCategoryItem(EDUCATION, id)}
 
-          reset={this.reset}
-        />
-        <CVOutput personalInfo={this.state[PERSONAL_INFO]} education={this.state[EDUCATION]} experience={this.state[EXPERIENCE]} />
+            reset={this.reset}
+          />
+          <CVOutput personalInfo={this.state[PERSONAL_INFO]} education={this.state[EDUCATION]} experience={this.state[EXPERIENCE]} />
+        </main>
+        <Footer />
       </div>
     )
   }

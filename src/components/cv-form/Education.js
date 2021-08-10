@@ -1,13 +1,14 @@
 import React from "react";
-import { Categories, CategoriesMeta } from "../models/Categories"
+import { Categories, CategoriesMeta } from "../../models/Categories"
 import { CategoryItem } from "./CategoryItem"
+import "../../style/cv-form/Category.css"
 
 function Education({ data, add, edit, remove }) {
     const { title } = Categories[CategoriesMeta.EDUCATION];
     return (
-        <div className={`${title}`}>
-            <h2 className={`${CategoriesMeta.EDUCATION}-title`}>Education</h2>
-            <div className={`${CategoriesMeta.EDUCATION}-items`}>
+        <div className="cv-form-category">
+            <h2 className="cv-form-category-title">Education</h2>
+            <div className="cv-form-category-items">
                 {
                     data.map(edu =>
                         <CategoryItem
@@ -21,7 +22,7 @@ function Education({ data, add, edit, remove }) {
                     )
                 }
             </div>
-            <button className={`add-${CategoriesMeta.EDUCATION}`} onClick={add}>Add</button>
+            <button className="cv-form-category-add" onClick={add}>New Entry</button>
         </div>
     )
 }
