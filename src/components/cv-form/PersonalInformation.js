@@ -5,7 +5,6 @@ import "../../style/cv-form/Category.css"
 
 function PersonalInfo({ data, edit }) {
     const { title } = Categories[CategoriesMeta.PERSONAL_INFO];
-
     return (
         <div className="cv-form-category">
             <h2 className="cv-form-category-title">{title}</h2>

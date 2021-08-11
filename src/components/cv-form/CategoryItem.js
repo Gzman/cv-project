@@ -3,12 +3,8 @@ import { validator } from "../validator"
 import "../../style/cv-form/CategoryItem.css"
 
 class CategoryItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            errors: new Set(),
-        }
-        this.validate = this.validate.bind(this);
+    state = {
+        errors: new Set(),
     }
 
     validate = (property, input) => {

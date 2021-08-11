@@ -10,17 +10,7 @@ import "./style/index.css"
 const { PERSONAL_INFO, EXPERIENCE, EDUCATION } = CategoriesMeta;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.initState();
-    this.initState = this.initState.bind(this);
-    this.addCategoryItem = this.addCategoryItem.bind(this);
-    this.removeCategoryItem = this.removeCategoryItem.bind(this);
-    this.editCategoryItem = this.editCategoryItem.bind(this);
-    this.reset = this.reset.bind(this);
-  }
-
-  initState() {
+  initState = () => {
     const initialState = Object
       .values(CategoriesMeta)
       .map((category) => [
@@ -34,7 +24,11 @@ class App extends Component {
     return Object.fromEntries(initialState);
   }
 
-  addCategoryItem(categoryName) {
+  state = this.initState();
+
+
+
+  addCategoryItem = (categoryName) => {
     let category = this.state[categoryName].slice();
     category = [
       ...category,
@@ -45,7 +39,7 @@ class App extends Component {
     });
   }
 
-  editCategoryItem(categoryName, id, property, value) {
+  editCategoryItem = (categoryName, id, property, value) => {
     const category = this.state[categoryName].slice();
     const index = category.findIndex((item) => item.id === id);
     category[index][property] = value;
@@ -54,14 +48,14 @@ class App extends Component {
     });
   }
 
-  removeCategoryItem(categoryName, id) {
+  removeCategoryItem = (categoryName, id) => {
     const category = this.state[categoryName];
     this.setState({
       [categoryName]: category.filter((item) => item.id !== id),
     });
   }
 
-  reset() {
+  reset = () => {
     this.setState(this.initState());
   }
 
