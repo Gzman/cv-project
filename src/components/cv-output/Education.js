@@ -1,19 +1,26 @@
-import React from "react"
-import "../../style/cv-output/Education.css"
+import { CategoriesMeta } from "../../models/Categories";
+import { EducationItem } from "./EducationItem";
+import { EducationMeta } from "../../models/EducationModel";
+import { Category } from "./Category"
 
-function Education({ categoryName, from, to, school, degree }) {
+function Education({ educations }) {
+    const { EDUCATION } = CategoriesMeta;
+    const { FROM, TO, SCHOOL, DEGREE } = EducationMeta;
     return (
-        <div className={`${categoryName}-content`}>
-            <div className={`${categoryName}-header`}>
-                <div className={`${categoryName}-years`}>
-                    <p className={`${categoryName}-period`}>{`${from} - ${to}`}</p>
-                </div>
-                <div className={`${categoryName}-info`}>
-                    <p className={`${categoryName}-degree`}>{degree}</p>
-                    <p className={`${categoryName}-school`}>{school}</p>
-                </div>
-            </div>
-        </div>
+        <Category title="Education">
+            {
+                educations.map((edu, index) =>
+                    <EducationItem
+                        key={index}
+                        categoryName={EDUCATION.toLowerCase()}
+                        from={edu[FROM]}
+                        to={edu[TO]}
+                        school={edu[SCHOOL]}
+                        degree={edu[DEGREE]}
+                    />
+                )
+            }
+        </Category>
     )
 }
 

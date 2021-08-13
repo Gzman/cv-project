@@ -1,22 +1,27 @@
-import React from "react"
-import "../../style/cv-output/Experience.css"
+import { CategoriesMeta } from "../../models/Categories";
+import { ExperienceItem } from "./ExperienceItem";
+import { ExperienceMeta } from "../../models/ExperienceModel";
+import { Category } from "./Category"
 
-function Experience({ categoryName, from, to, company, position, description }) {
+function Experience({ experiences }) {
+    const { EXPERIENCE } = CategoriesMeta;
+    const { FROM, TO, COMPANY, POSITION, DESCRIPTION } = ExperienceMeta;
     return (
-        <div className={`${categoryName}-content`}>
-            <div className={`${categoryName}-header`}>
-                <div className={`${categoryName}-years`}>
-                    <p className={`${categoryName}-period`}>{`${from} - ${to}`}</p>
-                </div>
-                <div className={`${categoryName}-info`}>
-                    <p className={`${categoryName}-position`}>{position}</p>
-                    <p className={`${categoryName}-company`}>{company}</p>
-                </div>
-            </div>
-            <div className={`${categoryName}-description`}>
-                <p className={`${categoryName}-description`}>{description}</p>
-            </div>
-        </div>
+        <Category title="Experience">
+            {
+                experiences.map((exp, index) =>
+                    <ExperienceItem
+                        key={index}
+                        categoryName={EXPERIENCE.toLowerCase()}
+                        from={exp[FROM]}
+                        to={exp[TO]}
+                        company={exp[COMPANY]}
+                        position={exp[POSITION]}
+                        description={exp[DESCRIPTION]}
+                    />
+                )
+            }
+        </Category>
     )
 }
 

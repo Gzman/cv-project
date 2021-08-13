@@ -1,6 +1,6 @@
 import "../../style/cv-output/PersonalInformation.css"
 
-function PersonalInfo({ categoryName, firstname, lastname, title, city, phoneNumber, email }) {
+function PersonalInfoItem({ categoryName, firstname, lastname, title, city, phoneNumber, email }) {
     return (
         <div className={`${categoryName}-content`}>
             <div className={`${categoryName}-header`}>
@@ -19,4 +19,4 @@ function PersonalInfo({ categoryName, firstname, lastname, title, city, phoneNum
     )
 }
 
-export { PersonalInfo }
+export { PersonalInfoItem }
